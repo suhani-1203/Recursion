@@ -6,7 +6,7 @@ class Solution {
                 subsequences.insert(current);
                 return;
             }      
-            generateSubsequences(index+1,current+str[index+1],str,subsequences);
+            generateSubsequences(index+1,current+str[index],str,subsequences);
             
             generateSubsequences(index+1,current,str,subsequences);
         } 
