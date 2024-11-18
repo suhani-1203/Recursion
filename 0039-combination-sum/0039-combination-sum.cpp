@@ -8,6 +8,8 @@ public:
             ans.push_back(current);
             return  ans;
         }
+        if(candidates[index]>target)
+            return ans;
         current.push_back(candidates[index]);
         target-=candidates[index];
         generateCombinations(index,candidates,target,current,ans);
@@ -20,6 +22,7 @@ public:
 
     }
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        sort(candidates.begin(),candidates.end());
         vector<vector<int>> ans;
         vector<int> current;
         generateCombinations(0,candidates,target,current,ans);
